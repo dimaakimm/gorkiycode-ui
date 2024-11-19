@@ -1,0 +1,14 @@
+.button{
+  display: flex;
+  justify-content: center;
+  width: 314px;
+  height: 70px;
+  border-radius: 100px;
+  border: 1.5px solid #ffffff;
+  align-items: center;
+}
+.active{
+  border: none;
+  background-color: #dcff2c;
+  color: #000000;
+}

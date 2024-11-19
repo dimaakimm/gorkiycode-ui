@@ -1,0 +1,30 @@
+.card{
+  width: 423px;
+  height: 250px;
+  background-color: #2e2e2e;
+  border-radius: 30px;
+}
+.content{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainInfo{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: normal;
+}
+.headerRight{
+  color: #dcff2c;
+}
+.headerLeft{
+  display: flex;
+  align-items: center;
+}

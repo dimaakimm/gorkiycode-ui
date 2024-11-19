@@ -1,0 +1,23 @@
+.tabs{
+  display: flex;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.mainText{
+  font-size: 95px;
+}
+.mainContentLeft{
+  width: 50%;
+}
+.mainContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content{
+  padding: 43px 70px;
+
+}
