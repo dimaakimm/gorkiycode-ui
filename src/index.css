@@ -1,6 +1,8 @@
 *{
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 :root {
@@ -11,4 +13,6 @@
   color-scheme: light dark;
   color: #ffffff;
   background-color: #242424;
+  text-decoration: none;
 }
+

@@ -3,7 +3,7 @@ import styles from "./HeaderButton.module.scss";
 import classNames from "classnames";
 
 interface HeaderButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   isActive: boolean;
   title: string;
   img: string;
@@ -20,7 +20,7 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({
       onClick={onClick}
     >
       <img src={img} alt={title} height="24px" />
-      {title}
+      <div className={styles.title}>{title}</div>
     </div>
   );
 };
