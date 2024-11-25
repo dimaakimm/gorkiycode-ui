@@ -1,0 +1,15 @@
+.modals__button{
+  position: absolute;
+  top: 20px;
+  right: 110px;
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
+
+.map{
+  position: relative;
+}
