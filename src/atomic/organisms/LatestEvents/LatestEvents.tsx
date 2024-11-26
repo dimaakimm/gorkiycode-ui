@@ -21,7 +21,7 @@ const LatestEvents = () => {
       </div>
       <div className={styles.button}>
         {" "}
-        <Button type="primary" title="смотреть больше" />
+        <Button>смотреть больше</Button>
       </div>
     </div>
   );

@@ -17,8 +17,10 @@ const HomePage = () => {
                 СОБЕРИ КОМАНДУ, ВЫБЕРИ ПЛОЩАДКУ - ИГРА НАЧНЕТСЯ!
               </div>
               <div className={styles.tabs}>
-                <Button type="secondary" title="НАЙТИ КОМАНДУ" />
-                <Button title="ПОИСК ПЛОЩАДКИ" />
+                <Button type="secondary" title="НАЙТИ КОМАНДУ">
+                  НАЙТИ КОМАНДУ
+                </Button>
+                <Button>ПОИСК ПЛОЩАДКИ</Button>
               </div>
             </div>
             <div className={styles.mainContentRight}>

@@ -36,11 +36,13 @@ const Header = () => {
           <Link to={page.link}>
             <Button
               img={page.img}
-              title={page.title}
               key={page.id}
-              size="s"
+              btnSize="s"
               type={location.pathname === page.link ? "secondary" : "primary"}
-            />
+            >
+              <img src={page.img} alt={page.title} />
+              {page.title}
+            </Button>
           </Link>
         ))}
       </div>

@@ -2,27 +2,24 @@ import React from "react";
 import styles from "./Button.module.scss";
 import classNames from "classnames";
 
-interface ButtonProps {
+interface ButtonProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   onClick?: () => void;
   type?: "primary" | "secondary";
-  size?: "s" | "m";
-  title: string;
+  btnSize?: "s" | "m";
   img?: string;
 }
 const Button: React.FC<ButtonProps> = ({
-  onClick,
   type = "primary",
-  img,
-  title,
-  size = "m",
+  btnSize = "m",
+  children,
+  onClick,
 }) => {
   return (
     <div
-      className={classNames(styles.button, styles[type], styles[size])}
+      className={classNames(styles.button, styles[type], styles[btnSize])}
       onClick={onClick}
     >
-      {img && <img src={img} alt="title" />}
-      {title}
+      {children}
     </div>
   );
 };
