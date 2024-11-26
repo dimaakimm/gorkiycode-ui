@@ -6,9 +6,9 @@ import { commandRequests } from "../../../data/mockedData.ts";
 const CommandRequests = () => {
   return (
     <div className={styles.events}>
-      <div className={styles.header}>
-        <h1>КОМАНДУ ИЩУТ</h1>
-      </div>
+      <div className={styles.header}>КОМАНДУ ИЩУТ</div>
+      <div className={styles.emptyBlock} />
+
       <CommandRequestsFilters />
       <div className={styles.container}>
         {commandRequests.map((request, i) => (

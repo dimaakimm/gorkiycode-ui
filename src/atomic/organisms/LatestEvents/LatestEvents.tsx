@@ -6,9 +6,8 @@ import { latestEvents } from "../../../data/mockedData.ts";
 const LatestEvents = () => {
   return (
     <div className={styles.events}>
-      <div className={styles.header}>
-        <h1>Последние события</h1>
-      </div>
+      <div className={styles.header}>ПОСЛЕДНИЕ СОБЫТИЯ</div>
+      <div className={styles.emptyBlock} />
       <div className={styles.container}>
         {latestEvents.map((event, i) => (
           <EventCard
@@ -20,7 +19,6 @@ const LatestEvents = () => {
         ))}
       </div>
       <div className={styles.button}>
-        {" "}
         <Button>смотреть больше</Button>
       </div>
     </div>

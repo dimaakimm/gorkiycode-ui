@@ -16,24 +16,24 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ request }) => {
           <div className={styles.headerRight}>{request.sportType}</div>
         </div>
         <div className={styles.mainInfo}>
-          <div className={styles.date}>
-            <img src="src/assets/calendar.svg" alt="calendar" />
+          <div className={styles.dataSector}>
+            <img src="src/assets/calendar-dark.svg" alt="calendar" />
             {request.date}
           </div>
-          <div className={styles.time}>
+          <div className={styles.dataSector}>
             <img src="src/assets/clock.svg" alt="time" />
             {request.startTime}-{request.endTime}
           </div>
-          <div className={styles.participants}>
+          <div className={styles.dataSector}>
             <img src="src/assets/participants.svg" alt="participants" />
             {request.participantsNumber}/{request.maxParticipantsNumber}
           </div>
-          <div className={styles.level}>
+          <div className={styles.dataSector}>
             <img src="src/assets/level.svg" alt="level" />
             {request.level}
           </div>
         </div>
-        <div className={styles.address}>
+        <div className={styles.dataSector}>
           <img src="src/assets/location.svg" alt="location" />
           {request.location}
         </div>

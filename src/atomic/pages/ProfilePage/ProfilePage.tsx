@@ -7,7 +7,7 @@ const ProfilePage = () => {
     <>
       <div className={styles.wrapper}>
         <Header />
-        <div className={styles.content}>content</div>
+        <div className={styles.content}>profile</div>
       </div>
       <Footer />
     </>

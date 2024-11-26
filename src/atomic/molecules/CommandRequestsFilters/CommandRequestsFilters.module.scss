@@ -1,3 +1,13 @@
 .filters{
   display: flex;
+  gap: 100px;
+  padding-bottom: 37px;
+}
+.filterBox{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.filterTitle{
+  font-size: 30px;
 }

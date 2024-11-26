@@ -1,5 +1,7 @@
 .tabs{
   display: flex;
+  gap: 15px;
+  margin-top: 60px;
 }
 .wrapper{
   display: flex;
@@ -8,16 +10,22 @@
 }
 .mainText{
   font-size: 95px;
-}
-.mainContentLeft{
-  width: 50%;
+  width: 980px;
 }
 .mainContent{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  position: relative;
+}
+.mainContentRight{
+  position: absolute;
+  right: -150px;
+  top: -130px;
 }
 .content{
   padding: 43px 70px;
-
+  max-width: 1600px;
+  align-self: center;
+}
+.emptyBlock{
+  height: 120px;
 }

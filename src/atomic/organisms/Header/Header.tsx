@@ -26,25 +26,27 @@ const Header = () => {
   ];
   return (
     <header className={styles.header}>
-      <div className={styles.headerLeft}>
-        <Link to="/">
-          <img src="src/assets/logo.svg" alt="logo" />
-        </Link>
-      </div>
-      <div className={styles.headerRight}>
-        {pages.map((page) => (
-          <Link to={page.link}>
-            <Button
-              img={page.img}
-              key={page.id}
-              btnSize="s"
-              type={location.pathname === page.link ? "secondary" : "primary"}
-            >
-              <img src={page.img} alt={page.title} />
-              {page.title}
-            </Button>
+      <div className={styles.content}>
+        <div className={styles.headerLeft}>
+          <Link to="/">
+            <img src="src/assets/logo.svg" alt="logo" />
           </Link>
-        ))}
+        </div>
+        <div className={styles.headerRight}>
+          {pages.map((page) => (
+            <Link to={page.link}>
+              <Button
+                img={page.img}
+                key={page.id}
+                btnSize="s"
+                type={location.pathname === page.link ? "secondary" : "primary"}
+              >
+                <img src={page.img} alt={page.title} />
+                {page.title}
+              </Button>
+            </Link>
+          ))}
+        </div>
       </div>
     </header>
   );

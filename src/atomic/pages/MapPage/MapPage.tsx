@@ -7,7 +7,7 @@ const MapPage = () => {
     <>
       <div className={styles.wrapper}>
         <Header />
-        <div className={styles.content}>content</div>
+        <div className={styles.content}>map</div>
       </div>
       <Footer />
     </>

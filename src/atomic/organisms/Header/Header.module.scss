@@ -1,9 +1,18 @@
 .header{
   display: flex;
-  justify-content: space-between;
-  padding: 43px 70px;
+  justify-content: center;
+  padding-top: 43px;
+  padding-bottom: 30px;
   background-color: #242424;
+  width: 100vw;
+  z-index: 2;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+  width: 1600px;
 }
 .headerRight{
   display: flex;
+  gap: 20px;
 }

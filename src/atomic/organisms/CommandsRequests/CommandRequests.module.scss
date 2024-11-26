@@ -2,11 +2,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 1400px;
-  justify-items: center;
   align-self: center;
-  gap: 10px;
+  gap: 20px;
 }
 .events{
   display: flex;
   flex-direction: column;
+}
+.header{
+  font-size: 60px;
+}
+.emptyBlock{
+  height: 80px;
 }

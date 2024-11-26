@@ -1,30 +1,45 @@
 .card{
-  width: 423px;
+  width: 100%;
   height: 250px;
   background-color: #2e2e2e;
   border-radius: 30px;
 }
 .content{
-  padding: 20px;
+  height: 100%;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 100px;
 }
 .mainInfo{
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  column-gap: normal;
+  column-gap: 20px;
+  row-gap: 15px;
+}
+.headerLeft{
+  display: flex;
+  gap: 15px;
 }
 .headerRight{
   color: #dcff2c;
+  align-self: center;
+  font-size: 25px;
+  font-weight: bold;
 }
 .headerLeft{
   display: flex;
   align-items: center;
+}
+.dataSector{
+  padding-left: 10px;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
 }

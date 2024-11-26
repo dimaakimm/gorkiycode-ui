@@ -18,9 +18,9 @@ const HomePage = () => {
               </div>
               <div className={styles.tabs}>
                 <Button type="secondary" title="НАЙТИ КОМАНДУ">
-                  НАЙТИ КОМАНДУ
+                  найти команду
                 </Button>
-                <Button>ПОИСК ПЛОЩАДКИ</Button>
+                <Button>поиск площадки</Button>
               </div>
             </div>
             <div className={styles.mainContentRight}>
@@ -32,7 +32,10 @@ const HomePage = () => {
               />
             </div>
           </div>
+          <div className={styles.emptyBlock} />
           <CommandRequests />
+          <div className={styles.emptyBlock} />
+
           <LatestEvents />
         </div>
       </div>
