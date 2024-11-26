@@ -1,7 +1,7 @@
 import Header from "../../organisms/Header/Header.tsx";
 import styles from "./HomePage.module.scss";
 import Footer from "../../organisms/Footer/Footer.tsx";
-import Button from "../../molecules/Button/Button.tsx";
+import Button from "../../atoms/Button/Button.tsx";
 import LatestEvents from "../../organisms/LatestEvents/LatestEvents.tsx";
 import CommandRequests from "../../organisms/CommandsRequests/CommandRequests.tsx";
 
@@ -17,7 +17,7 @@ const HomePage = () => {
                 СОБЕРИ КОМАНДУ, ВЫБЕРИ ПЛОЩАДКУ - ИГРА НАЧНЕТСЯ!
               </div>
               <div className={styles.tabs}>
-                <Button isActive title="НАЙТИ КОМАНДУ" />
+                <Button type="secondary" title="НАЙТИ КОМАНДУ" />
                 <Button title="ПОИСК ПЛОЩАДКИ" />
               </div>
             </div>

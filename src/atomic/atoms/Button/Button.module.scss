@@ -1,14 +1,21 @@
 .button{
   display: flex;
   justify-content: center;
-  width: 314px;
-  height: 70px;
   border-radius: 100px;
   border: 1.5px solid #ffffff;
   align-items: center;
+  cursor: pointer;
 }
-.active{
+.secondary{
   border: none;
   background-color: #dcff2c;
   color: #000000;
+}
+.m{
+  width: 314px;
+  height: 70px;
+}
+.s{
+  width: 164px;
+  height: 40px;
 }

@@ -1,21 +1,6 @@
 import styles from "./CommandRequestCard.module.scss";
+import { CommandRequestCardProps } from "../../../models";
 
-interface CommandRequestCardProps {
-  request: {
-    owner: {
-      name: string;
-      img: null | string;
-    };
-    date: string;
-    startTime: string;
-    endTime: string;
-    location: string;
-    participantsNumber: number;
-    maxParticipantsNumber: number;
-    sportType: string;
-    level: string;
-  };
-}
 const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ request }) => {
   return (
     <div className={styles.card}>

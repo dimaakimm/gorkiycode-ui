@@ -3,23 +3,25 @@ import styles from "./Button.module.scss";
 import classNames from "classnames";
 
 interface ButtonProps {
-  title: string;
   onClick?: () => void;
-  width?: string;
-  isActive?: boolean;
+  type?: "primary" | "secondary";
+  size?: "s" | "m";
+  title: string;
+  img?: string;
 }
 const Button: React.FC<ButtonProps> = ({
-  title,
   onClick,
-  width = "314px",
-  isActive = false,
+  type = "primary",
+  img,
+  title,
+  size = "m",
 }) => {
   return (
     <div
-      className={classNames(styles.button, isActive ? styles.active : null)}
+      className={classNames(styles.button, styles[type], styles[size])}
       onClick={onClick}
-      style={{ width: width }}
     >
+      {img && <img src={img} alt="title" />}
       {title}
     </div>
   );

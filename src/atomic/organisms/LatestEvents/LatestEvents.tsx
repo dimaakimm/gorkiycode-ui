@@ -1,25 +1,9 @@
 import styles from "./LatestEvents.module.scss";
 import EventCard from "../../molecules/EventCard/EventCard.tsx";
-import Button from "../../molecules/Button/Button.tsx";
+import Button from "../../atoms/Button/Button.tsx";
+import { latestEvents } from "../../../data/mockedData.ts";
 
 const LatestEvents = () => {
-  const latestEvents = [
-    {
-      img: "src/assets/mocked/event1.svg",
-      title: "Latest Events",
-      date: "20.11.2024",
-    },
-    {
-      img: "src/assets/mocked/event1.svg",
-      title: "Latest Events",
-      date: "20.11.2024",
-    },
-    {
-      img: "src/assets/mocked/event1.svg",
-      title: "Latest Events",
-      date: "20.11.2024",
-    },
-  ];
   return (
     <div className={styles.events}>
       <div className={styles.header}>
@@ -37,7 +21,7 @@ const LatestEvents = () => {
       </div>
       <div className={styles.button}>
         {" "}
-        <Button title="смотреть больше" />
+        <Button type="primary" title="смотреть больше" />
       </div>
     </div>
   );

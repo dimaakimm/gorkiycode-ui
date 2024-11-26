@@ -1,23 +1,23 @@
-import React from "react";
 import styles from "./Header.module.scss";
-import HeaderButton from "../../molecules/HeaderButton/HeaderButton.tsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Button from "../../atoms/Button/Button.tsx";
 
-interface HeaderProps {
-  activeTabId?: number;
-}
-const Header: React.FC<HeaderProps> = ({ activeTabId }) => {
+const Header = () => {
+  const location = useLocation();
   const pages = [
     {
       id: 1,
-      img: activeTabId === 1 ? "src/assets/map-dark.svg" : "src/assets/map.svg",
+      img:
+        location.pathname === "/map"
+          ? "src/assets/map-dark.svg"
+          : "src/assets/map.svg",
       title: "карта",
       link: "/map",
     },
     {
       id: 2,
       img:
-        activeTabId === 2
+        location.pathname === "/profile"
           ? "src/assets/profile-dark.svg"
           : "src/assets/profile.svg",
       title: "профиль",
@@ -34,11 +34,12 @@ const Header: React.FC<HeaderProps> = ({ activeTabId }) => {
       <div className={styles.headerRight}>
         {pages.map((page) => (
           <Link to={page.link}>
-            <HeaderButton
+            <Button
               img={page.img}
               title={page.title}
               key={page.id}
-              isActive={activeTabId === page.id}
+              size="s"
+              type={location.pathname === page.link ? "secondary" : "primary"}
             />
           </Link>
         ))}

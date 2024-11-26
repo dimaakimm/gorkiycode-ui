@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./EventCard.module.scss";
+import { EventCardProps } from "../../../models";
 
-interface EventCardProps {
-  img: string;
-  title: string;
-  date: string;
-}
 const EventCard: React.FC<EventCardProps> = ({ img, title, date }) => {
   return (
     <div className={styles.card} style={{ backgroundImage: `url(${img})` }}>
