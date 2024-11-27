@@ -209,7 +209,15 @@ textarea {
   gap: 15px;
 
   h2{
+    font-weight: 400;
     font-size: 30px;
   }
 
+}
+
+.filtersRow{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 50px;
 }

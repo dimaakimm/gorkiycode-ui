@@ -1,7 +1,7 @@
-
 import baseStyles from "../../../molecules/ModalMap/ModalMap.module.scss";
 import {ModalMapProps, ModalMap} from "../../../molecules/ModalMap/ModalMap.tsx";
 import icon from "../../../../assets/filter-icon.svg"
+import Select from "../../../molecules/Select/Select.tsx";
 
 type ModalMapFiltersProps = Omit<ModalMapProps, "children"> & {
 
@@ -17,8 +17,35 @@ const ModalMapFilters: React.FC<ModalMapFiltersProps> = (props: ModalMapFiltersP
                     <img src={icon}/>
                     <h2>Фильтры карты</h2>
                 </div>
-                <div>
+                <div className={baseStyles.filtersRow}>
+                    <Select>
+                        <option>Вид спорта</option>
+                        <option>Футбол</option>
+                        <option>Баскетбол</option>
+                        <option>Волейбол</option>
+                    </Select>
 
+                    <Select>
+                        <option>Дата и время</option>
+                        <option>Низкая</option>
+                        <option>Средняя</option>
+                        <option>Высокая</option>
+                    </Select>
+                </div>
+                <div className={baseStyles.filtersRow}>
+                    <Select>
+                        <option>Загруженность площадки</option>
+                        <option>Низкая</option>
+                        <option>Средняя</option>
+                        <option>Высокая</option>
+                    </Select>
+
+                    <Select>
+                        <option>Состояние площадки</option>
+                        <option>Плохое</option>
+                        <option>Среднее</option>
+                        <option>Хорошее</option>
+                    </Select>
                 </div>
             </div>
         </ModalMap>
