@@ -43,7 +43,7 @@ border-radius: 10px;
 
 /* Текущий день */
 .react-calendar__tile--now {
-    background-color: #FF4500;  /* Оранжевый фон для текущего дня */
+    background-color: #4b4b4b;  /* Оранжевый фон для текущего дня */
     color: white;  /* Белый текст для текущего дня */
 }
 
@@ -73,9 +73,9 @@ border-radius: 10px;
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
     background-color: inherit;
-    color: #7a7a7a;
+    color: #dcff2c;
 }
 .react-calendar__tile--now:hover,.react-calendar__tile--now:focus  {
-    background-color: #FF4500 !important;  /* Оранжевый фон для текущего дня */
+    background-color: #4b4b4b !important;  /* Оранжевый фон для текущего дня */
     color: white;  /* Белый текст для текущего дня */
 }

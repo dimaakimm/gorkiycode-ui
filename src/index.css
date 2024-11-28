@@ -5,9 +5,16 @@
   color: inherit;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: 'Gothem';
+  src: url('src/assets/fonts/gotham_book.otf') format('truetype');
+}
+@font-face {
+  font-family: 'BebasNeueBold';
+  src: url('src/assets/fonts/BebasNeueBold.ttf') format('truetype');
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Gothem', system-ui, sans-serif, system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,4 +24,3 @@
   text-decoration: none;
 
 }
-
