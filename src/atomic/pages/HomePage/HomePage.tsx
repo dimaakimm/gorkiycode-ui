@@ -14,7 +14,7 @@ const HomePage = () => {
           <div className={styles.mainContent}>
             <div className={styles.mainContentLeft}>
               <div className={styles.mainText}>
-                СОБЕРИ КОМАНДУ, ВЫБЕРИ ПЛОЩАДКУ - ИГРА НАЧНЕТСЯ!
+                СОБЕРИ КОМАНДУ, ВЫБЕРИ ПЛОЩАДКУ – ИГРА НАЧИНАЕТСЯ!
               </div>
               <div className={styles.tabs}>
                 <Button type="secondary" title="НАЙТИ КОМАНДУ">
@@ -25,8 +25,8 @@ const HomePage = () => {
             </div>
             <div className={styles.mainContentRight}>
               <img
-                width="855px"
-                height="855px"
+                width="1000px"
+                height="1000px"
                 src="src/assets/rockets.svg"
                 alt="rockets"
               />

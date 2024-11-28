@@ -11,7 +11,8 @@
 .mainText{
   font-family: 'BebasNeueBold';
   font-size: 95px;
-  width: 980px;
+  width: 800px;
+  line-height: 1.2
 }
 .mainContent{
   display: flex;
@@ -20,11 +21,11 @@
 .mainContentRight{
   position: absolute;
   right: -150px;
-  top: -130px;
+  top: -150px;
+
 }
 .content{
   padding: 43px 70px;
-  max-width: 1600px;
   align-self: center;
 }
 .emptyBlock{
