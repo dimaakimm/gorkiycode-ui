@@ -1,0 +1,28 @@
+.custom-select{
+
+}
+
+.select{
+  appearance: none; /* Скрываем стандартный стиль */
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  color: #000;
+  cursor: pointer;
+  outline: none !important;
+  height: 55px;
+  display: flex;
+  align-items: start;
+  text-wrap: wrap;
+
+  background-image: url('/src/assets/select-arrow.svg'); /* Ссылка на стрелочку */
+  background-repeat: no-repeat;
+  background-position: right 10px top -2px; /* Расположение стрелочки */
+  background-size: 24px; /* Размер стрелочки */
+}
