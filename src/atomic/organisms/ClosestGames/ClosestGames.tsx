@@ -27,6 +27,30 @@ const ClosestGames = () => {
       game: "volleyball",
       time: "12:30",
     },
+    {
+      date: {
+        day: 3,
+        weekday: "sn",
+      },
+      game: "volleyball",
+      time: "12:30",
+    },
+    {
+      date: {
+        day: 3,
+        weekday: "sn",
+      },
+      game: "volleyball",
+      time: "12:30",
+    },
+    {
+      date: {
+        day: 3,
+        weekday: "sn",
+      },
+      game: "volleyball",
+      time: "12:30",
+    },
   ];
   return (
     <div className={styles.wrapper}>

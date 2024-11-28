@@ -9,6 +9,12 @@ const Achievements = () => {
     {
       title: "Выиграл соревнование по армрестлингу",
     },
+    {
+      title: "Занял 1-ое место по бегу",
+    },
+    {
+      title: "Выиграл соревнование по армрестлингу",
+    },
   ];
   return (
     <div className={styles.wrapper}>

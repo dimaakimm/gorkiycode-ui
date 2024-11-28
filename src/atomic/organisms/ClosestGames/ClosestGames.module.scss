@@ -10,4 +10,11 @@
   flex-direction: column;
   gap: 10px;
   height: 300px;
+  overflow-y: scroll;
+}
+.mainContent::-webkit-scrollbar {
+  width: 8px;
+}
+.mainContent::-webkit-scrollbar-thumb {
+  background-color: grey;
 }
