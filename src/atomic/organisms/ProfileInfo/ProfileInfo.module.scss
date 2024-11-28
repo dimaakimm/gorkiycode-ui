@@ -9,7 +9,8 @@
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  height: 100%;
 }
 .header{
   display: flex;
@@ -26,4 +27,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.content{
+  height: 100%;
+  padding-bottom: 30px;
 }

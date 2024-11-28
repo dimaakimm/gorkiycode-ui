@@ -1,4 +1,5 @@
 import styles from "./ProfileInfo.module.scss";
+import ProfileInput from "../../atoms/ProfileInput/ProfileInput.tsx";
 
 const ProfileInfo = () => {
   return (
@@ -10,7 +11,12 @@ const ProfileInfo = () => {
           </div>
           <div className={styles.title}>Профиль</div>
         </div>
-        <div className={styles.mainContent}></div>
+        <div className={styles.mainContent}>
+          <ProfileInput placeholder="Имя" />
+          <ProfileInput placeholder="Никнейм" />
+          <ProfileInput placeholder="Пароль"></ProfileInput>
+          <ProfileInput placeholder="Приоритетный район"></ProfileInput>
+        </div>
       </div>
     </div>
   );
