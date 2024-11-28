@@ -3,15 +3,18 @@ import "react-calendar/dist/Calendar.css";
 import "./ProfileCalendar.scss";
 import React from "react";
 
+interface ProfileCalendarProps {
+  specialDates: string[];
+}
 interface DateProps {
   date: Date;
 }
-const ProfileCalendar = () => {
-  const specialDates = ["2024-11-25", "2024-11-26"]; // Определенные даты, которые нужно пометить
-
+const ProfileCalendar: React.FC<ProfileCalendarProps> = ({ specialDates }) => {
+  console.log(specialDates);
   const tileContent: React.FC<DateProps> = ({ date }) => {
-    if (specialDates.includes(date.toISOString().slice(0, 10))) {
-      // Проверяем, является ли текущая дата специальной
+    const currentDate = new Date(date);
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (specialDates.includes(currentDate.toISOString().slice(0, 10))) {
       return (
         <div
           style={{
@@ -20,16 +23,13 @@ const ProfileCalendar = () => {
             padding: "2px",
           }}
         ></div>
-      ); // Желтый круг для специальных дат
+      );
     }
-    return null; // Если текущая дата не является специальной
+    return null;
   };
   return (
     <div className="calendar">
-      <Calendar
-        className="react-calendar"
-        tileContent={tileContent} // Передаем функцию для отображения контента в ячейке календаря
-      />
+      <Calendar className="react-calendar" tileContent={tileContent} />
     </div>
   );
 };

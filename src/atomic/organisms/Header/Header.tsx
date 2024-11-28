@@ -34,7 +34,7 @@ const Header = () => {
         </div>
         <div className={styles.headerRight}>
           {pages.map((page) => (
-            <Link to={page.link}>
+            <Link to={page.link} key={page.link}>
               <Button
                 img={page.img}
                 key={page.id}

@@ -7,6 +7,7 @@ import Avatar from "../../organisms/Avatar/Avatar.tsx";
 import ProfileInfo from "../../organisms/ProfileInfo/ProfileInfo.tsx";
 import SkillLevels from "../../organisms/SkillLevels/SkillLevels.tsx";
 import SportPreferences from "../../organisms/SportPreferences/SportPreferences.tsx";
+import { profileData } from "../../../data/mockedData.ts";
 
 const ProfilePage = () => {
   return (
@@ -16,16 +17,24 @@ const ProfilePage = () => {
         <div className={styles.content}>
           <div className={styles.column}>
             <Avatar />
-            <ProfileInfo />
+            <ProfileInfo
+              name={profileData.name}
+              nickname={profileData.nickname}
+              priorityArea={profileData.priorityArea}
+            />
           </div>
           <div className={styles.column}>
-            <Achievements />
-            <SportPreferences />
-            <SkillLevels />
+            <Achievements achievements={profileData.achievements} />
+            <SportPreferences activeSports={profileData.sportWithLevelList} />
+            <SkillLevels activeSports={profileData.sportWithLevelList} />
           </div>
           <div className={styles.column}>
-            <ClosestGames />
-            <ProfileCalendar />
+            <ClosestGames events={profileData.playgroundEventDtoList} />
+            <ProfileCalendar
+              specialDates={profileData.playgroundEventDtoList.map(
+                (item) => item.startTime.split("T")[0],
+              )}
+            />
           </div>
         </div>
       </div>

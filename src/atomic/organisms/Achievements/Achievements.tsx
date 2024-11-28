@@ -1,21 +1,11 @@
 import styles from "./Achievements.module.scss";
 import AchievementCard from "../../molecules/AchievementCard/AchievementCard.tsx";
+import React from "react";
 
-const Achievements = () => {
-  const achievemnts = [
-    {
-      title: "Занял 1-ое место по бегу",
-    },
-    {
-      title: "Выиграл соревнование по армрестлингу",
-    },
-    {
-      title: "Занял 1-ое место по бегу",
-    },
-    {
-      title: "Выиграл соревнование по армрестлингу",
-    },
-  ];
+interface AchievementsProps {
+  achievements: string[];
+}
+const Achievements: React.FC<AchievementsProps> = ({ achievements }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -26,8 +16,8 @@ const Achievements = () => {
           <div className={styles.title}>Достижения</div>
         </div>
         <div className={styles.mainContent}>
-          {achievemnts.map((achievemnt) => (
-            <AchievementCard data={achievemnt} />
+          {achievements.map((achievemnt) => (
+            <AchievementCard key={achievemnt} title={achievemnt} />
           ))}
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./SkillLevelCard.module.scss";
 import classNames from "classnames";
-
+import { sports } from "../../../data/mockedData.ts";
 interface SkillLevelCardProps {
   data: {
+    sportName: string;
     level: number;
-    img: string;
   };
 }
 const SkillLevelCard: React.FC<SkillLevelCardProps> = ({ data }) => {
@@ -14,7 +14,7 @@ const SkillLevelCard: React.FC<SkillLevelCardProps> = ({ data }) => {
       <div className={styles.content}>
         <div className={styles.img}>
           <img
-            src={data.img || "src/assets/achievement.svg"}
+            src={sports.find((sport) => sport.title === data.sportName)?.img}
             alt="achievemnt"
           />
         </div>
