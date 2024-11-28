@@ -1,0 +1,19 @@
+.wrapper{
+  background-color: #383838;
+  border-radius: 15px;
+  padding: 17px 20px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.img{
+  display: flex;
+  justify-content: center;
+}

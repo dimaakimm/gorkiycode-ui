@@ -35,7 +35,6 @@ const HomePage = () => {
           <div className={styles.emptyBlock} />
           <CommandRequests />
           <div className={styles.emptyBlock} />
-
           <LatestEvents />
         </div>
       </div>
