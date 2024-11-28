@@ -12,6 +12,7 @@
 .date{
   display: flex;
   flex-direction: row;
+  gap: 3px;
 }
 .day{
   font-size: 45px;
@@ -19,6 +20,7 @@
 }
 .weekday{
   margin-top: auto;
+  margin-bottom: 8px;
 }
 .game{
   display: flex;

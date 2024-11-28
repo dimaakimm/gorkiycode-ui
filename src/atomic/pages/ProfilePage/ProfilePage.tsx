@@ -4,6 +4,7 @@ import ProfileCalendar from "../../organisms/ProfileCalendar/ProfileCalendar.tsx
 import ClosestGames from "../../organisms/ClosestGames/ClosestGames.tsx";
 import Achievements from "../../organisms/Achievements/Achievements.tsx";
 import Avatar from "../../organisms/Avatar/Avatar.tsx";
+import ProfileInfo from "../../organisms/ProfileInfo/ProfileInfo.tsx";
 
 const ProfilePage = () => {
   return (
@@ -13,7 +14,7 @@ const ProfilePage = () => {
         <div className={styles.content}>
           <div className={styles.column}>
             <Avatar />
-            <Avatar />
+            <ProfileInfo />
           </div>
           <div className={styles.column}>
             <Achievements />

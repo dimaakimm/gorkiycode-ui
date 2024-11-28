@@ -1,0 +1,29 @@
+.wrapper{
+  padding: 20px 20px 30px 20px;
+  background: #2e2e2e;
+  border-radius: 30px;
+  font-size: 20px;
+  height: 50%;
+}
+.mainContent{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.title{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
