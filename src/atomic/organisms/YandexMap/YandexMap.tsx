@@ -9,8 +9,8 @@ const YandexMap = () => {
     const [filtersIsActive, setFiltersIsActive] = useState<boolean>(false)
     const [meetsIsActive, setMeetsIsActive] = useState<boolean>(false)
     const [playgroundIsActive, setPlaygroundIsActive] = useState<boolean>(true)
-    const mapCenter = [55.751574, 37.573856];
-    const placemarkCoords = [55.751574, 37.573856];
+    const mapCenter = [56.327745, 44.002288];
+    const placemarkCoords = [56.327745, 44.002288];
 
     const handlePlacemarkClick = () => {
         setPlaygroundIsActive(true)
