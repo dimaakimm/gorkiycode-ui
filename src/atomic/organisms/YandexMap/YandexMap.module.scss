@@ -1,0 +1,33 @@
+.modals__button{
+  transition: all 0.6s ease;
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+
+  &.active{
+    right: 420px;
+  }
+
+}
+
+
+
+.map{
+  position: relative;
+}
+
+.modal__button{
+  width: 55px;
+  height: 55px;
+  background-color: #1F1F1F;
+  border-radius: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
