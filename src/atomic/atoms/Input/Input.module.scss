@@ -1,0 +1,17 @@
+.input{
+  appearance: none;
+  padding: 11px 30px;
+  height: 40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.input::placeholder{
+  color: #DDDDDD
+}
