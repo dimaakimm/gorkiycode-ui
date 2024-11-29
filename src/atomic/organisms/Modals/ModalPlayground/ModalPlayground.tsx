@@ -23,6 +23,14 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                     <img src={icon}/>
                     <h2>Площадка</h2>
                 </div>
+                <div className={baseStyles.playground__status}>
+                    <h2 className={baseStyles.playground__statusHeader}>
+                        Состояние
+                    </h2>
+                    <p className={baseStyles.playground__statusValue}>
+                        свободно
+                    </p>
+                </div>
                 <LoadChart data={data}/>
                 <TeamList teamMembersTotal={[1, 1, 1, 1, 1, 1]}/>
                 <div className={baseStyles.inputsRow}>

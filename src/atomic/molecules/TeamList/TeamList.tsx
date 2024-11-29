@@ -12,7 +12,7 @@ const TeamList: React.FC<TeamListProps> = (props: TeamListProps) => {
     const baseOffset = 15
     const {teamMembersTotal} = props
     return (
-        <div>
+        <div className={styles.teamList}>
             <div className={styles.teamList__header}>
                 <h3 className={styles.teamList__headerTeam}>Команда</h3>
                 <p className={styles.teamList__headerCount}>10/12</p>

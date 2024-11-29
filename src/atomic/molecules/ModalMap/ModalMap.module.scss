@@ -204,7 +204,7 @@ textarea {
 
 .modal__header{
   color: black;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
   display: flex;
   gap: 15px;
 
@@ -219,15 +219,17 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 35px;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .inputsRow{
+  margin-top: 10px;
   display: flex;
   gap: 10px;
 }
 
 .iWillCumBtn{
+  margin-top: 30px;
   height: 40px;
   width: 100%;
   border-radius: 100px;
@@ -235,4 +237,48 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.filtersApplyBtn{
+  height: 40px;
+  width: 100%;
+  border-radius: 100px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.filtersRestoreBtn{
+  color: #B5B5B5;
+  font-size: 12px;
+  line-height: 18px;
+  height: 30px;
+  width: 100%;
+}
+
+.filtersBtns{
+  margin-top: 30px;
+  width: 100%;
+}
+
+.playground__status{
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playground__statusHeader{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: black;
+}
+
+.playground__statusValue{
+  font-size: 16px;
+  line-height: 20px;
+  color: #AFAFAF;
 }
