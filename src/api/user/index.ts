@@ -24,7 +24,7 @@ export interface IUserData {
 
 export interface UpdateSportProps {
   sportName: string;
-  level: number;
+  sportLevel: number;
 }
 export interface SportProps {
   newSportName: string;
@@ -43,4 +43,10 @@ export const deleteSportData = (props: DeleteSportProps): AxiosPromise =>
     UserProfileEndpoints.DELETE_SPORT_LEVEL + "?sportName=" + props.sportName,
   );
 export const updateSportData = (props: UpdateSportProps): AxiosPromise =>
-  axiosInstance.put(UserProfileEndpoints.UPDATE_SPORT_LEVEL, props);
+  axiosInstance.put(
+    UserProfileEndpoints.UPDATE_SPORT_LEVEL +
+      "?sportName=" +
+      props.sportName +
+      "&sportLevel=" +
+      props.sportLevel,
+  );
