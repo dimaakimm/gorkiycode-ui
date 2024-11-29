@@ -5,3 +5,6 @@ import {EventsEndpoints, PlaygroundEndpoints} from "../endpoints.ts";
 
 export const putICome = (id:number, time:Date): AxiosPromise =>
     axiosInstance.post(EventsEndpoints.COME_TO_EVENT, {playgroundId: id, startTime: time, isGeneralCollection: false});
+
+export const putCall = (id:number, time:Date): AxiosPromise =>
+    axiosInstance.post(EventsEndpoints.COME_TO_EVENT, {playgroundId: id, startTime: time, isGeneralCollection: true});

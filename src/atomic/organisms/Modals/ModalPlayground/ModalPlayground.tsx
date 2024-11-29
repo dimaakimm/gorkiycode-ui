@@ -14,7 +14,10 @@ import Input from "../../../atoms/Input/Input.tsx";
 import Button from "../../../atoms/Button/Button.tsx";
 import {getFullPlayground} from "../../../../api/playground";
 import {IPlaygroundFull} from "../../../../api/playground/types.ts";
-import {putICome} from "../../../../api/event";
+import {putCall, putICome} from "../../../../api/event";
+import goodStar from "../../../../assets/good-star.png";
+import badStar from "../../../../assets/bad-star.png";
+
 type ModalPlaygroundProps = Omit<ModalMapProps, "children"> & {
     id: number
 };
@@ -24,6 +27,9 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
     const [nowPlayers, setNowPlayers] = useState(0);
     const [playground, setPlayground] = useState<IPlaygroundFull>()
     const [cancelCome, setCancelCome] = useState<boolean>(false);
+
+    const [time, setTime] = useState<number>(0);
+    const [people, setPeople] = useState();
 
     function round(date: Date) {
         const newDate = new Date(date);
@@ -50,6 +56,12 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
     function iCome(){
         setCancelCome(true)
         putICome(id, round(new Date()))
+    }
+
+    function callPeople(){
+        const now = new Date();
+        now.setHours(time, 0, 0, 0)
+        putCall(id, now);
     }
 
 
@@ -81,6 +93,20 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                         </SwiperSlide>
                     </Swiper>
                 </div>
+                {/*<div className={baseStyles.info}>*/}
+                {/*    <div className={baseStyles.infoRow}>*/}
+                {/*        <div className={baseStyles.infoRow__place}>*/}
+                {/*            ул. Новикова-Прибоя, 4*/}
+                {/*        </div>*/}
+                {/*        <div className={baseStyles.infoRow__mark}>*/}
+                {/*            <img src={goodStar}/>*/}
+                {/*            <img src={goodStar}/>*/}
+                {/*            <img src={goodStar}/>*/}
+                {/*            <img src={badStar}/>*/}
+                {/*            <img src={badStar}/>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <div className={baseStyles.playground__status}>
                     <h2 className={baseStyles.playground__statusHeader}>
                         Состояние
@@ -92,8 +118,12 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                 <LoadChart setNowPlayers={setNowPlayers} states={playground?.playgroundStateTimeDtoList}/>
                 <TeamList teamMembersTotal={new Array(nowPlayers).fill(0)}/>
                 <div className={baseStyles.inputsRow}>
-                    <Input placeholder={"Время сбора"}/>
+                    <Input value={time} onChange={(e) => setTime(Number(e.target.value))} placeholder={"Время сбора"}/>
                     <Input placeholder={"Кол-во людей"}/>
+                </div>
+                <div className={baseStyles.inputsRow}>
+                    <Button onClick={() => callPeople() } type={"primary"} className={baseStyles.callBtn}>объявить сбор</Button>
+                    <div></div>
                 </div>
                 <div>
                     {
