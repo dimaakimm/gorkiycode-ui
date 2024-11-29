@@ -2,6 +2,7 @@ import baseStyles from "../../../molecules/ModalMap/ModalMap.module.scss";
 import {ModalMapProps, ModalMap} from "../../../molecules/ModalMap/ModalMap.tsx";
 import icon from "../../../../assets/filter-icon.svg"
 import Select from "../../../molecules/Select/Select.tsx";
+import Button from "../../../atoms/Button/Button.tsx";
 
 type ModalMapFiltersProps = Omit<ModalMapProps, "children"> & {
 
@@ -46,6 +47,10 @@ const ModalMapFilters: React.FC<ModalMapFiltersProps> = (props: ModalMapFiltersP
                         <option>Среднее</option>
                         <option>Хорошее</option>
                     </Select>
+                </div>
+                <div className={baseStyles.filtersBtns}>
+                    <Button type={"secondary"} className={baseStyles.filtersApplyBtn}>сохранить фильтры</Button>
+                    <Button type={"primary"} className={baseStyles.filtersRestoreBtn}>сбросить фильтры</Button>
                 </div>
             </div>
         </ModalMap>

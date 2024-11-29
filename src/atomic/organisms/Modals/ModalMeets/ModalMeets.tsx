@@ -2,6 +2,7 @@ import baseStyles from "../../../molecules/ModalMap/ModalMap.module.scss";
 import {ModalMapProps, ModalMap} from "../../../molecules/ModalMap/ModalMap.tsx";
 import icon from "../../../../assets/meets-icon.svg"
 import Select from "../../../molecules/Select/Select.tsx";
+import Button from "../../../atoms/Button/Button.tsx";
 
 type ModalMeetsProps = Omit<ModalMapProps, "children"> & {
 
@@ -46,6 +47,10 @@ const ModalMeets: React.FC<ModalMeetsProps> = (props: ModalMeetsProps) => {
                         <option>Ленинский район</option>
                         <option>Сормовский район</option>
                     </Select>
+                </div>
+                <div className={baseStyles.filtersBtns}>
+                    <Button type={"secondary"} className={baseStyles.filtersApplyBtn}>сохранить фильтры</Button>
+                    <Button type={"primary"} className={baseStyles.filtersRestoreBtn}>сбросить фильтры</Button>
                 </div>
             </div>
         </ModalMap>
