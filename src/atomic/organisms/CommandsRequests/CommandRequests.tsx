@@ -1,9 +1,7 @@
 import styles from "./CommandRequests.module.scss";
 import CommandRequestsFilters from "../../molecules/CommandRequestsFilters/CommandRequestsFilters.tsx";
 import CommandRequestCard from "../../molecules/CommandRequestCard/CommandRequestCard.tsx";
-import { commandRequests } from "../../../data/mockedData.ts";
 import { useEffect, useState } from "react";
-import { getUserData, IUserData } from "../../../api/user";
 import { getEventData, IEventData } from "../../../api/events";
 
 const CommandRequests = () => {
@@ -28,7 +26,7 @@ const CommandRequests = () => {
       <CommandRequestsFilters />
       <div className={styles.container}>
         {eventsData.map((request, i) => (
-          <CommandRequestCard request={request} key={i} />
+          <CommandRequestCard data={request} key={i} />
         ))}
       </div>
     </div>

@@ -3,14 +3,16 @@ import { axiosInstance } from "../instance.ts";
 import { EventsEndpoints } from "../endpoints.ts";
 
 export interface IEventData {
-  userCount: number;
   level: string;
   playgroundEventInfoDto: {
-    playgroundId: number;
     playgroundEventId: number;
-    type: string;
+    playgroundId: number;
     startTime: string;
+    street: string;
+    town: string;
+    type: string;
   };
+  userCount: 1;
 }
 
 export const getEventData = (): AxiosPromise<IEventData[]> =>
