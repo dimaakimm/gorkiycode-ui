@@ -9,11 +9,12 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   flex-direction: column;
-  gap: 10px;
   height: 130px;
-  overflow-y: scroll;
+  gap: 10px;
+  overflow-y: hidden;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+
 }
 .mainContent::-webkit-scrollbar {
   width: 8px;
@@ -46,4 +47,5 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
 }
