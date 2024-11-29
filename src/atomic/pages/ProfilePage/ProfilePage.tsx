@@ -7,9 +7,23 @@ import Avatar from "../../organisms/Avatar/Avatar.tsx";
 import ProfileInfo from "../../organisms/ProfileInfo/ProfileInfo.tsx";
 import SkillLevels from "../../organisms/SkillLevels/SkillLevels.tsx";
 import SportPreferences from "../../organisms/SportPreferences/SportPreferences.tsx";
-import { profileData } from "../../../data/mockedData.ts";
+import { getUserData, IUserData } from "../../../api/user";
+import { useEffect, useState } from "react";
 
 const ProfilePage = () => {
+  const [profileData, setProfileData] = useState<null | IUserData>(null);
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await getUserData();
+        setProfileData(response.data);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    fetchUserData();
+  }, []);
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -18,20 +32,20 @@ const ProfilePage = () => {
           <div className={styles.column}>
             <Avatar />
             <ProfileInfo
-              name={profileData.name}
-              nickname={profileData.nickname}
-              priorityArea={profileData.priorityArea}
+              name={profileData?.name}
+              nickname={profileData?.nickname}
+              priorityArea={profileData?.priorityArea}
             />
           </div>
           <div className={styles.column}>
-            <Achievements achievements={profileData.achievements} />
-            <SportPreferences activeSports={profileData.sportWithLevelList} />
-            <SkillLevels activeSports={profileData.sportWithLevelList} />
+            <Achievements achievements={profileData?.achievements} />
+            <SportPreferences activeSports={profileData?.sportWithLevelList} />
+            <SkillLevels activeSports={profileData?.sportWithLevelList} />
           </div>
           <div className={styles.column}>
-            <ClosestGames events={profileData.playgroundEventDtoList} />
+            <ClosestGames events={profileData?.playgroundEventDtoList} />
             <ProfileCalendar
-              specialDates={profileData.playgroundEventDtoList.map(
+              specialDates={profileData?.playgroundEventDtoList.map(
                 (item) => item.startTime.split("T")[0],
               )}
             />

@@ -1,3 +1,9 @@
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation, Pagination} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "./Swiper.scss";
 import React, {useEffect, useState} from 'react';
 import {ModalMap, ModalMapProps} from "../../../molecules/ModalMap/ModalMap.tsx";
 import baseStyles from "../../../molecules/ModalMap/ModalMap.module.scss";
@@ -55,6 +61,26 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                     <img src={icon}/>
                     <h2>Площадка</h2>
                 </div>
+                <div className={baseStyles.imgSwiper}>
+                    <Swiper
+                        pagination={{
+                            type: "fraction",
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <img src="src/assets/mocked/event1.svg" alt="event1"/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="src/assets/mocked/event2.svg" alt="event1"/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="src/assets/mocked/event3.svg" alt="event1"/>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
                 <div className={baseStyles.playground__status}>
                     <h2 className={baseStyles.playground__statusHeader}>
                         Состояние
@@ -72,8 +98,11 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                 <div>
                     {
                         cancelCome
-                        ?   <Button onClick={() => iCome()} className={[baseStyles.iWillCumBtn, baseStyles.iWillCumBtnCancel ].join(" ")} type={"secondary"}>не приду :(</Button>
-                        :   <Button onClick={() => iCome()} className={baseStyles.iWillCumBtn} type={"secondary"}>я приду!</Button>
+                            ? <Button onClick={() => iCome()}
+                                      className={[baseStyles.iWillCumBtn, baseStyles.iWillCumBtnCancel].join(" ")}
+                                      type={"secondary"}>не приду :(</Button>
+                            : <Button onClick={() => iCome()} className={baseStyles.iWillCumBtn} type={"secondary"}>я
+                                приду!</Button>
                     }
                 </div>
             </div>

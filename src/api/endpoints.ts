@@ -1,6 +1,6 @@
 export const enum UserEndpoints {
   UPDATE_USER_PROFILE = "/user/profile",
-  GET_USER_PROFILE = "/user/information/",
+  GET_USER_PROFILE = "/user/information",
 }
 export const enum EventsEndpoints {
   COME_TO_EVENT = "/event/create",

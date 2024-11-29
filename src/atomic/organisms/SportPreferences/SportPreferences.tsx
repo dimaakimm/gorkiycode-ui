@@ -3,10 +3,12 @@ import styles from "./SportPreferences.module.scss";
 import { sports } from "../../../data/mockedData.ts";
 
 interface SportPreferencesProps {
-  activeSports: {
-    sportName: string;
-    level: number;
-  }[];
+  activeSports:
+    | {
+        sportName: string;
+        level: number;
+      }[]
+    | undefined;
 }
 const SportPreferences: React.FC<SportPreferencesProps> = ({
   activeSports,
@@ -26,6 +28,7 @@ const SportPreferences: React.FC<SportPreferencesProps> = ({
               <img
                 key={sport.title}
                 src={
+                  activeSports &&
                   activeSports
                     .map((activeSport) => activeSport.sportName)
                     .includes(sport.title)
