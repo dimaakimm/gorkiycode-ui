@@ -29,7 +29,7 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
           </div>
           <div className={styles.dataSector}>
             <img src="src/assets/clock.svg" alt="time" />
-            {time}:00
+            {time}
           </div>
           <div className={styles.dataSector}>
             <img src="src/assets/participants.svg" alt="participants" />
