@@ -4,6 +4,7 @@ import Footer from "../../organisms/Footer/Footer.tsx";
 import Button from "../../atoms/Button/Button.tsx";
 import LatestEvents from "../../organisms/LatestEvents/LatestEvents.tsx";
 import CommandRequests from "../../organisms/CommandsRequests/CommandRequests.tsx";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -20,7 +21,9 @@ const HomePage = () => {
                 <Button type="secondary" title="НАЙТИ КОМАНДУ">
                   найти команду
                 </Button>
-                <Button>поиск площадки</Button>
+                <Link to="/map">
+                  <Button>поиск площадки</Button>
+                </Link>
               </div>
             </div>
             <div className={styles.mainContentRight}>
