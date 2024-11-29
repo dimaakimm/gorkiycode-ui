@@ -39,7 +39,11 @@ const ProfilePage = () => {
           </div>
           <div className={styles.column}>
             <Achievements achievements={profileData?.achievements} />
-            <SportPreferences activeSports={profileData?.sportWithLevelList} />
+            {profileData && (
+              <SportPreferences
+                activeSports={profileData?.sportWithLevelList}
+              />
+            )}
             <SkillLevels activeSports={profileData?.sportWithLevelList} />
           </div>
           <div className={styles.column}>

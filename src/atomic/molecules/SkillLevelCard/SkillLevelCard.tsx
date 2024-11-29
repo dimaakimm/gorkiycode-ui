@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SkillLevelCard.module.scss";
 import classNames from "classnames";
 import { sports } from "../../../data/mockedData.ts";
+import { updateSportData } from "../../../api/user";
 interface SkillLevelCardProps {
   data: {
     sportName: string;
@@ -9,6 +10,21 @@ interface SkillLevelCardProps {
   };
 }
 const SkillLevelCard: React.FC<SkillLevelCardProps> = ({ data }) => {
+  const [level, setLevel] = useState(data.level);
+  const onClick = async (currentLevel: number) => {
+    try {
+      if (level === currentLevel) {
+        return;
+      }
+      await updateSportData({
+        sportLevel: currentLevel,
+        sportName: data.sportName,
+      });
+      setLevel(currentLevel);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -19,27 +35,27 @@ const SkillLevelCard: React.FC<SkillLevelCardProps> = ({ data }) => {
           />
         </div>
         <div className={styles.level}>
-          <div className={styles.levelBox}>
+          <div className={styles.levelBox} onClick={() => onClick(1)}>
             <div
               className={classNames(
                 styles.firstLevel,
-                data.level > 0 ? styles.activeLevel : null,
+                level > 0 ? styles.activeLevel : null,
               )}
             />
           </div>
-          <div className={styles.levelBox}>
+          <div className={styles.levelBox} onClick={() => onClick(2)}>
             <div
               className={classNames(
                 styles.secondLevel,
-                data.level > 1 ? styles.activeLevel : null,
+                level > 1 ? styles.activeLevel : null,
               )}
             />
           </div>
-          <div className={styles.levelBox}>
+          <div className={styles.levelBox} onClick={() => onClick(3)}>
             <div
               className={classNames(
                 styles.thirdLevel,
-                data.level > 2 ? styles.activeLevel : null,
+                level > 2 ? styles.activeLevel : null,
               )}
             />
           </div>

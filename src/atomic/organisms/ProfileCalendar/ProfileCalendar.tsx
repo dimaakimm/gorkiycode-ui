@@ -10,7 +10,6 @@ interface DateProps {
   date: Date;
 }
 const ProfileCalendar: React.FC<ProfileCalendarProps> = ({ specialDates }) => {
-  console.log(specialDates);
   const tileContent: React.FC<DateProps> = ({ date }) => {
     const currentDate = new Date(date);
     currentDate.setDate(currentDate.getDate() + 1);
