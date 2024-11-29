@@ -11,3 +11,8 @@ export const enum PlaygroundEndpoints {
   GET_PLAYGROUND = "/playground/",
   GET_ALL_PLAYGROUNDS = "/event",
 }
+export const enum UserProfileEndpoints {
+  ADD_SPORT = "/user/update/sport",
+  UPDATE_SPORT_LEVEL = "/user/update/sport/level",
+  DELETE_SPORT_LEVEL = "/user/delete/sport",
+}

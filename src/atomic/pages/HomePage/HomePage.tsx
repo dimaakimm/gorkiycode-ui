@@ -28,9 +28,9 @@ const HomePage = () => {
             </div>
             <div className={styles.mainContentRight}>
               <img
-                width="1000px"
-                height="1000px"
-                src="src/assets/rockets.svg"
+                width="750px"
+                height="900px"
+                src="src/assets/rockets.png"
                 alt="rockets"
               />
             </div>

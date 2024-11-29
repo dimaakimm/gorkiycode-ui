@@ -28,20 +28,20 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
             {date}
           </div>
           <div className={styles.dataSector}>
-            <img src="src/assets/clock.svg" alt="time" />
-            {time}
-          </div>
-          <div className={styles.dataSector}>
             <img src="src/assets/participants.svg" alt="participants" />
             {data?.userCount}/12
+          </div>
+          <div className={styles.dataSector}>
+            <img src="src/assets/clock.svg" alt="time" />
+            {time}
           </div>
           <div className={styles.dataSector}>
             <img src="src/assets/level.svg" alt="level" />
             {data?.level}
           </div>
         </div>
-        <div className={styles.dataSector}>
-          <img src="src/assets/location.svg" alt="location" />
+        <div className={[styles.dataSector, styles.dataPlace].join(" ")}>
+          <img src="src/assets/placemark.svg" alt="location" />
           ул. {data?.playgroundEventInfoDto.street}
         </div>
       </div>

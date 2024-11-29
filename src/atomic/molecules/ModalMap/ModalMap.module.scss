@@ -298,11 +298,51 @@ textarea {
 
 .info{
   margin: 30px 0 40px 0;
-  height: 30px;
 }
 
-.infoRow{
+.infoRow__base{
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.infoRow__dop{
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  color: black;
+  font-size: 15px;
+}
+
+.infoRow__el{
+  border: 1px solid black;
+  border-radius: 100px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
 
+.infoRow__place{
+  padding: 0 11px;
+}
+
+.infoRow__mark{
+  padding: 0 13px;
+}
+
+.infoRow__time{
+  padding: 0 20px;
+}
+.infoRow__people{
+  padding: 0 22px;
+}
+
+.infoRow__sport{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
 }

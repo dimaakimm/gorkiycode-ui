@@ -122,11 +122,16 @@ export const sports = [
   {
     title: "Настольный теннис",
     img: "/src/assets/sports/tableTennis.svg",
-    activeImg: "src/assets/sports/table-tennis-active.svg",
+    activeImg: "src/assets/sports/tableTennis-active.svg",
   },
   {
-    title: "Воркаут",
-    img: "src/assets/sports/workout.svg",
-    activeImg: "src/assets/sports/workout-active.svg",
+    title: "Бокс",
+    img: "src/assets/sports/box.svg",
+    activeImg: "src/assets/sports/box-active.svg",
+  },
+  {
+    title: "Бег",
+    img: "/src/assets/sports/run.svg",
+    activeImg: "src/assets/sports/run-active.svg",
   },
 ];

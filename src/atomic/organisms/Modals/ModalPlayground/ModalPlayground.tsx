@@ -61,6 +61,7 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
     function callPeople(){
         const now = new Date();
         now.setHours(time, 0, 0, 0)
+        now.setTime(now.getTime() + 1000*60*60*6)
         putCall(id, now);
     }
 
@@ -93,20 +94,25 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                {/*<div className={baseStyles.info}>*/}
-                {/*    <div className={baseStyles.infoRow}>*/}
-                {/*        <div className={baseStyles.infoRow__place}>*/}
-                {/*            ул. Новикова-Прибоя, 4*/}
-                {/*        </div>*/}
-                {/*        <div className={baseStyles.infoRow__mark}>*/}
-                {/*            <img src={goodStar}/>*/}
-                {/*            <img src={goodStar}/>*/}
-                {/*            <img src={goodStar}/>*/}
-                {/*            <img src={badStar}/>*/}
-                {/*            <img src={badStar}/>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+                <div className={baseStyles.info}>
+                    <div className={baseStyles.infoRow__base}>
+                        <div className={[baseStyles.infoRow__place, baseStyles.infoRow__el].join(" ")}>
+                            ул. Новикова-Прибоя, 4
+                        </div>
+                        <div className={[baseStyles.infoRow__mark, baseStyles.infoRow__el].join(" ")}>
+                            <img width="18px" src={goodStar}/>
+                            <img width="18px" src={goodStar}/>
+                            <img width="18px" src={goodStar}/>
+                            <img width="18px" src={badStar}/>
+                            <img width="18px" src={badStar}/>
+                        </div>
+                    </div>
+                    <div className={baseStyles.infoRow__dop}>
+                        <div className={[baseStyles.infoRow__time, baseStyles.infoRow__el].join(" ")}>12:00</div>
+                        <div className={[baseStyles.infoRow__people, baseStyles.infoRow__el].join(" ")}>10/12</div>
+                        <div className={[baseStyles.infoRow__sport, baseStyles.infoRow__el].join(" ")}>Волейбол</div>
+                    </div>
+                </div>
                 <div className={baseStyles.playground__status}>
                     <h2 className={baseStyles.playground__statusHeader}>
                         Состояние

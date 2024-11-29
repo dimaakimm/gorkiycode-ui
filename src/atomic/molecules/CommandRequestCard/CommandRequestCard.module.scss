@@ -12,16 +12,16 @@
   justify-content: space-between;
 }
 .header{
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 100px;
+  display: flex;
+  margin-bottom: 15px;
 }
 .mainInfo{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 175px 160px;
   grid-template-rows: auto auto;
   column-gap: 20px;
   row-gap: 15px;
+  margin-bottom: 15px;
 }
 .headerLeft{
   display: flex;
@@ -33,6 +33,7 @@
   align-self: center;
   font-size: 25px;
   font-weight: bold;
+  margin-left: 50px;
 }
 .headerLeft{
   display: flex;
@@ -46,4 +47,11 @@
   gap: 20px;
   font-size: 20px;
 
+}
+
+.dataPlace{
+  img{
+    width: 35px;
+  }
+  padding-left: 5px;
 }
