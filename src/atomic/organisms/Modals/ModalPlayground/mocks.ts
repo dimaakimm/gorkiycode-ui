@@ -72,3 +72,11 @@ export const data = [
         predict: 20,
         now: 2,
     },]
+
+export function passedHours(time: Date){
+    const now = new Date();
+    const startOfDay = new Date(now.setHours(0, 0, 0, 0));
+    const differenceInMs = time.getTime() - startOfDay.getTime();
+    const hoursPassed = differenceInMs / (1000 * 60 * 60);
+    return Math.floor(hoursPassed);
+}

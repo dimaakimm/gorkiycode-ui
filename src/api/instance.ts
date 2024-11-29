@@ -7,7 +7,7 @@ export const axiosInstance = axios.create({
   },
 });
 const token =
-  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJleGFtcGxlX25pY2tuYW1lMiIsImlhdCI6MTczMjg2ODM2NywiZXhwIjoxNzMzMDQxMTY3fQ.9DQLmor36MzOb77KUIrfMF_NME-sUOggPrXwL_GWsizGj53Awjj8XFvGHPn0mZ8c";
+  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNzMyODY5OTc1LCJleHAiOjE3MzI5NTYzNzV9.vuCJTyhB2xl8bA92J8zCVcW08L7qqbdwCHwRYGPGjmWSuwF4prqXSbPWO-qmAnkG";
 axiosInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${token}`;
   return config;

@@ -1,20 +1,35 @@
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import styles from "./YandexMap.module.scss"
 import ModalMapFilters from "../Modals/ModalMapFilters/ModalMapFilters.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ModalMeets from "../Modals/ModalMeets/ModalMeets.tsx";
 import ModalPlayground from "../Modals/ModalPlayground/ModalPlayground.tsx";
+import {IPlayground} from "../../../api/playground/types.ts";
+import {getAllPlaygrounds} from "../../../api/playground";
 
 const YandexMap = () => {
     const [filtersIsActive, setFiltersIsActive] = useState<boolean>(false)
     const [meetsIsActive, setMeetsIsActive] = useState<boolean>(false)
-    const [playgroundIsActive, setPlaygroundIsActive] = useState<boolean>(true)
+    const [playgroundId, setPlaygroundId] = useState<number | null>(null)
     const mapCenter = [56.327745, 44.002288];
-    const placemarkCoords = [56.327745, 44.002288];
+    const [playgrounds, setPlaygrounds] = useState<IPlayground[]>([]);
 
-    const handlePlacemarkClick = () => {
-        setPlaygroundIsActive(true)
+    const handlePlacemarkClick = (id:number) => {
+        setPlaygroundId(id)
     };
+
+    useEffect(() => {
+        const fetchPlaygrounds = async () => {
+            try {
+                const temp = await getAllPlaygrounds();
+                console.log(temp)
+                setPlaygrounds(temp.data);
+            } catch (error) {
+                console.error("Error fetching playgrounds:", error);
+            }
+        };
+        fetchPlaygrounds();
+    }, []);
 
     return (
         <>
@@ -29,10 +44,13 @@ const YandexMap = () => {
                         width="100%"
                         height="calc(100vh - 114px)"
                     >
-                        <Placemark
-                            geometry={placemarkCoords}
-                            onClick={handlePlacemarkClick}
-                        />
+                        {playgrounds.map((el, index) =>
+                            <Placemark
+                                key={index}
+                                geometry={[el.latitude, el.longitude]}
+                                onClick={() => handlePlacemarkClick(el.id)}
+                            />
+                        )}
                     </Map>
                 </YMaps>
             </div>
@@ -72,7 +90,7 @@ const YandexMap = () => {
 
             <ModalMapFilters active={filtersIsActive} onClose={() => setFiltersIsActive(false)}/>
             <ModalMeets active={meetsIsActive} onClose={() => setMeetsIsActive(false)}/>
-            <ModalPlayground active={playgroundIsActive} onClose={() => setPlaygroundIsActive(false)}/>
+            {playgroundId != null && <ModalPlayground id={playgroundId} active={!!playgroundId} onClose={() => setPlaygroundId(null)}/>}
         </>
     );
 };
