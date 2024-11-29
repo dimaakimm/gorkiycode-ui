@@ -15,7 +15,9 @@ type ModalPlaygroundProps = Omit<ModalMapProps, "children"> & {
 
 const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundProps) => {
     const {active, onClose, id} = props;
+    const [nowPlayers, setNowPlayers] = useState(0);
     const [playground, setPlayground] = useState<IPlaygroundFull>()
+    const [cancelCome, setCancelCome] = useState<boolean>(false);
 
     function round(date: Date) {
         const newDate = new Date(date);
@@ -39,6 +41,11 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
         console.log(playground)
     }, []);
 
+    function iCome(){
+        setCancelCome(true)
+        putICome(id, round(new Date()))
+    }
+
 
     return (
         <ModalMap active={active} onClose={onClose}>
@@ -56,14 +63,18 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                         свободно
                     </p>
                 </div>
-                <LoadChart states={playground?.playgroundStateTimeDtoList}/>
-                <TeamList teamMembersTotal={[1, 1, 1, 1, 1, 1]}/>
+                <LoadChart setNowPlayers={setNowPlayers} states={playground?.playgroundStateTimeDtoList}/>
+                <TeamList teamMembersTotal={new Array(nowPlayers).fill(0)}/>
                 <div className={baseStyles.inputsRow}>
                     <Input placeholder={"Время сбора"}/>
                     <Input placeholder={"Кол-во людей"}/>
                 </div>
                 <div>
-                    <Button onClick={() => putICome(id, round(new Date()))} className={baseStyles.iWillCumBtn} type={"secondary"}>я приду!</Button>
+                    {
+                        cancelCome
+                        ?   <Button onClick={() => iCome()} className={[baseStyles.iWillCumBtn, baseStyles.iWillCumBtnCancel ].join(" ")} type={"secondary"}>не приду :(</Button>
+                        :   <Button onClick={() => iCome()} className={baseStyles.iWillCumBtn} type={"secondary"}>я приду!</Button>
+                    }
                 </div>
             </div>
         </ModalMap>
