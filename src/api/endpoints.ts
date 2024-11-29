@@ -1,6 +1,6 @@
 export const enum UserEndpoints {
   UPDATE_USER_PROFILE = "/user/profile",
-  GET_USER_PROFILE = "/user/information/",
+  GET_USER_PROFILE = "/user/information",
 }
 export const enum EventsEndpoints {
   COME_TO_EVENT = "/event/come",
@@ -8,5 +8,5 @@ export const enum EventsEndpoints {
 }
 export const enum PlaygroundEndpoints {
   GET_PLAYGROUND = "/playground",
-  GET_ALL_PLAYGROUNDS = "/event",
+  GET_ALL_PLAYGROUNDS = "/playgrounds",
 }

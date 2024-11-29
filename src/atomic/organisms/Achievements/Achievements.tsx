@@ -3,7 +3,7 @@ import AchievementCard from "../../molecules/AchievementCard/AchievementCard.tsx
 import React from "react";
 
 interface AchievementsProps {
-  achievements: string[];
+  achievements: string[] | undefined;
 }
 const Achievements: React.FC<AchievementsProps> = ({ achievements }) => {
   return (
@@ -16,7 +16,7 @@ const Achievements: React.FC<AchievementsProps> = ({ achievements }) => {
           <div className={styles.title}>Достижения</div>
         </div>
         <div className={styles.mainContent}>
-          {achievements.map((achievemnt) => (
+          {achievements?.map((achievemnt) => (
             <AchievementCard key={achievemnt} title={achievemnt} />
           ))}
         </div>

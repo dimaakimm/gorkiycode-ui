@@ -4,7 +4,7 @@ import "./ProfileCalendar.scss";
 import React from "react";
 
 interface ProfileCalendarProps {
-  specialDates: string[];
+  specialDates: string[] | undefined;
 }
 interface DateProps {
   date: Date;
@@ -14,7 +14,7 @@ const ProfileCalendar: React.FC<ProfileCalendarProps> = ({ specialDates }) => {
   const tileContent: React.FC<DateProps> = ({ date }) => {
     const currentDate = new Date(date);
     currentDate.setDate(currentDate.getDate() + 1);
-    if (specialDates.includes(currentDate.toISOString().slice(0, 10))) {
+    if (specialDates?.includes(currentDate.toISOString().slice(0, 10))) {
       return (
         <div
           style={{

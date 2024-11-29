@@ -3,10 +3,12 @@ import SkillLevelCard from "../../molecules/SkillLevelCard/SkillLevelCard.tsx";
 import React from "react";
 
 interface SkillLevelsProps {
-  activeSports: {
-    sportName: string;
-    level: number;
-  }[];
+  activeSports:
+    | {
+        sportName: string;
+        level: number;
+      }[]
+    | undefined;
 }
 const SkillLevels: React.FC<SkillLevelsProps> = ({ activeSports }) => {
   return (
@@ -19,9 +21,10 @@ const SkillLevels: React.FC<SkillLevelsProps> = ({ activeSports }) => {
           <div className={styles.title}>Уровень навыков</div>
         </div>
         <div className={styles.mainContent}>
-          {activeSports.map((sport) => (
-            <SkillLevelCard key={sport.sportName} data={sport} />
-          ))}
+          {activeSports &&
+            activeSports.map((sport) => (
+              <SkillLevelCard key={sport.sportName} data={sport} />
+            ))}
         </div>
       </div>
     </div>
