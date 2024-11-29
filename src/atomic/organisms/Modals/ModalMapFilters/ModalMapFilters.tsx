@@ -3,6 +3,7 @@ import {ModalMapProps, ModalMap} from "../../../molecules/ModalMap/ModalMap.tsx"
 import icon from "../../../../assets/filter-icon.svg"
 import Select from "../../../molecules/Select/Select.tsx";
 import Button from "../../../atoms/Button/Button.tsx";
+import restoreIcon from "../../../../assets/restore-filter.svg"
 
 type ModalMapFiltersProps = Omit<ModalMapProps, "children"> & {
 
@@ -50,7 +51,7 @@ const ModalMapFilters: React.FC<ModalMapFiltersProps> = (props: ModalMapFiltersP
                 </div>
                 <div className={baseStyles.filtersBtns}>
                     <Button type={"secondary"} className={baseStyles.filtersApplyBtn}>сохранить фильтры</Button>
-                    <Button type={"primary"} className={baseStyles.filtersRestoreBtn}>сбросить фильтры</Button>
+                    <Button type={"primary"} className={baseStyles.filtersRestoreBtn}><img src={restoreIcon}/></Button>
                 </div>
             </div>
         </ModalMap>

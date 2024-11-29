@@ -15,9 +15,9 @@ const Footer = () => {
         </div>
         <div className={styles.footerMiddle}>
           <div className={styles.pagesText}>Политика конфиденциальности</div>
-          <div className={styles.pagesText}>Правовая информация</div>
+          <div className={styles.pagesText}>Карта</div>
           <Link to="/map">
-            <div className={styles.pagesText}>Карта</div>
+            <div className={styles.pagesText}>Правовая информация</div>
           </Link>
           <Link to="/news">
             <div className={styles.pagesText}>Новости</div>

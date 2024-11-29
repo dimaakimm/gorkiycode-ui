@@ -5,7 +5,6 @@ interface CommandRequestCardProps {
   data: IEventData;
 }
 const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
-  console.log(data);
   const fullDate = data.playgroundEventInfoDto.startTime;
   const date = fullDate.slice(0, 10);
   const time = fullDate.slice(11, 16);
@@ -42,7 +41,7 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
         </div>
         <div className={[styles.dataSector, styles.dataPlace].join(" ")}>
           <img src="src/assets/placemark.svg" alt="location" />
-          ул. {data?.playgroundEventInfoDto.street}
+          ул. {data?.playgroundEventInfoDto.street.split(",")[0]}
         </div>
       </div>
     </div>

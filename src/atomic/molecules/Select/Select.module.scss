@@ -7,7 +7,7 @@
   -webkit-appearance: none; /* Для Safari */
   -moz-appearance: none; /* Для Firefox */
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 22px;
   background-color: #fff;
   border: none;
@@ -20,6 +20,7 @@
   display: flex;
   align-items: start;
   text-wrap: wrap;
+  font-family: 'Gothem', system-ui, sans-serif, system-ui, sans-serif;
 
   background-image: url('/src/assets/select-arrow.svg'); /* Ссылка на стрелочку */
   background-repeat: no-repeat;

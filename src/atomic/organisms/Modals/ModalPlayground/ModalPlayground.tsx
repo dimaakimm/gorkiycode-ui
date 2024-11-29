@@ -115,10 +115,10 @@ const ModalPlayground: React.FC<ModalPlaygroundProps> = (props: ModalPlaygroundP
                 </div>
                 <div className={baseStyles.playground__status}>
                     <h2 className={baseStyles.playground__statusHeader}>
-                        Состояние
+                        Загруженность
                     </h2>
                     <p className={baseStyles.playground__statusValue}>
-                        свободно
+
                     </p>
                 </div>
                 <LoadChart setNowPlayers={setNowPlayers} states={playground?.playgroundStateTimeDtoList}/>
