@@ -2,11 +2,16 @@
   width: 423px;
   height: 250px;
   border-radius: 30px;
+  background:
+          linear-gradient(0, rgba(0,0,0,0.29), rgba(0,0,0,0.40)),  /* Градиент с прозрачностью */
+          url("src/assets/mocked/event1.svg")
 }
 .content{
-  height: 190px;
-  padding: 40px;
+  height: 260px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 20px;
+  line-height: 25px;
 }
