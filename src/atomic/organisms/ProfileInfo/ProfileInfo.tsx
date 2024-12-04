@@ -21,7 +21,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ name, nickname }) => {
           <ProfileInput placeholder="Имя" defaultValue={name} />
           <ProfileInput placeholder="Никнейм" defaultValue={nickname} />
           <ProfileInput placeholder="Пароль"></ProfileInput>
-          <ProfileInput placeholder="Приоритетный район"></ProfileInput>
+          <ProfileInput defaultValue={"Приокский район"} placeholder="Приоритетный район"></ProfileInput>
         </div>
       </div>
     </div>

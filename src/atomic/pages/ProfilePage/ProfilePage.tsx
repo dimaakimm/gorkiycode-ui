@@ -34,11 +34,15 @@ const ProfilePage = () => {
             <ProfileInfo
               name={profileData?.name}
               nickname={profileData?.nickname}
-              priorityArea={profileData?.priorityArea}
+              priorityArea={"Приокский район"}
             />
           </div>
           <div className={styles.column}>
-            <Achievements achievements={profileData?.achievements} />
+            <Achievements achievements={[
+              "Участник X-WATERS Volga",
+              "Участвовал в забеге беги герой"
+
+              ]}/>
             {profileData && (
               <SportPreferences
                 activeSports={profileData?.sportWithLevelList}

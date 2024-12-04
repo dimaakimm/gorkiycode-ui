@@ -3,7 +3,8 @@ import React from "react";
 import person from "../../../assets/person-icon.svg"
 
 interface TeamListProps{
-    teamMembersTotal: number[]
+    teamMembersTotal: number[];
+    hasList: boolean;
 }
 function getPlayersCountText(count) {
     const lastDigit = count % 10;
@@ -29,7 +30,7 @@ const TeamList: React.FC<TeamListProps> = (props: TeamListProps) => {
     const iconWidth = 45;
     const offsetPerImage = 15;
     const baseOffset = 15
-    const {teamMembersTotal} = props
+    const {teamMembersTotal, hasList} = props
     const plus = teamMembersTotal.length <= 6 ? teamMembersTotal.length : teamMembersTotal.length-6;
 
     return (
@@ -40,7 +41,7 @@ const TeamList: React.FC<TeamListProps> = (props: TeamListProps) => {
             </div>
             <div className={styles.teamList__list}>
                 <div className={styles.teamList__listIcons}>
-                    {teamMembersTotal.map((el, index) => {
+                    {hasList && teamMembersTotal.map((el, index) => {
                         const left = (iconWidth*index - offsetPerImage*index) + "px"
                         return (
                             index <6 && <img style={{left}} className={styles.teamList__listIcon} src={person}/>
@@ -48,7 +49,10 @@ const TeamList: React.FC<TeamListProps> = (props: TeamListProps) => {
                     })}
                 </div>
                 <div className={styles.teamList__listPlus}>
-                    {teamMembersTotal.length > 6 && "+ "}{getPlayersCountText(plus)}
+                    {hasList
+                        ? (teamMembersTotal.length > 6 ? "+ " : "") + getPlayersCountText(plus)
+                        : "0 игроков"
+                    }
                 </div>
             </div>
         </div>

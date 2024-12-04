@@ -2,24 +2,24 @@ import React from "react";
 import styles from "./Button.module.scss";
 import classNames from "classnames";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void;
-  type?: "primary" | "secondary";
+  btnType?: "primary" | "secondary" | "submit" | "reset" | "button";
   btnSize?: "s" | "m";
   img?: string;
 }
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { type = "primary", btnSize = "m", children, onClick, className, ...rest } = props;
+  const { btnType = "primary", btnSize = "m", children, onClick, className, ...rest } = props;
 
   return (
-      <div
-          className={classNames(styles.button, styles[type], styles[btnSize], className)} // className уже включён
+      <button
+          className={classNames(styles.button, styles[btnType], styles[btnSize], className)} // className уже включён
           onClick={onClick}
-          {...rest} // передаём все остальные props, но не className
+          {...rest}
       >
         {children}
-      </div>
+      </button>
   );
 };
 

@@ -50,8 +50,8 @@ const ModalMapFilters: React.FC<ModalMapFiltersProps> = (props: ModalMapFiltersP
                     </Select>
                 </div>
                 <div className={baseStyles.filtersBtns}>
-                    <Button type={"secondary"} className={baseStyles.filtersApplyBtn}>сохранить фильтры</Button>
-                    <Button type={"primary"} className={baseStyles.filtersRestoreBtn}><img src={restoreIcon}/></Button>
+                    <Button btnType={"secondary"} className={baseStyles.filtersApplyBtn}>сохранить фильтры</Button>
+                    <Button btnType={"primary"} className={baseStyles.filtersRestoreBtn}><img src={restoreIcon}/></Button>
                 </div>
             </div>
         </ModalMap>

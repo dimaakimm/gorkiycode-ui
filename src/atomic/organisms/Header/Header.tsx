@@ -39,7 +39,7 @@ const Header = () => {
                 img={page.img}
                 key={page.id}
                 btnSize="s"
-                type={location.pathname === page.link ? "secondary" : "primary"}
+                btnType={location.pathname === page.link ? "secondary" : "primary"}
               >
                 <img src={page.img} alt={page.title} />
                 {page.title}

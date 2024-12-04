@@ -20,5 +20,7 @@ export interface IPlaygroundFull{
 export interface IPlaygroundState{
     "userCount": number,
     "level": string,
-    "startTime": Date
+    "startTime": Date,
+    "maxCount": number,
+    "isGeneral": boolean
 }

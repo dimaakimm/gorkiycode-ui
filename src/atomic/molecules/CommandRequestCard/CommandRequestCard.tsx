@@ -7,7 +7,7 @@ interface CommandRequestCardProps {
 const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
   const fullDate = data.playgroundEventInfoDto.startTime;
   const date = fullDate.slice(0, 10);
-  const time = fullDate.slice(11, 16);
+  const time = String(Number(fullDate.slice(11, 13))+3) + fullDate.slice(13, 16);
 
   return (
     <div className={styles.card}>
@@ -28,7 +28,7 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
           </div>
           <div className={styles.dataSector}>
             <img src="src/assets/participants.svg" alt="participants" />
-            {data?.userCount}/12
+            {data?.userCount}/{data.userMaxCount || 12}
           </div>
           <div className={styles.dataSector}>
             <img src="src/assets/clock.svg" alt="time" />
@@ -41,7 +41,7 @@ const CommandRequestCard: React.FC<CommandRequestCardProps> = ({ data }) => {
         </div>
         <div className={[styles.dataSector, styles.dataPlace].join(" ")}>
           <img src="src/assets/placemark.svg" alt="location" />
-          ул. {data?.playgroundEventInfoDto.street.split(",")[0]}
+          {data?.playgroundEventInfoDto.street.split(",")[0]}
         </div>
       </div>
     </div>

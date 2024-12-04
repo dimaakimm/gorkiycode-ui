@@ -7,14 +7,15 @@ import ModalPlayground from "../Modals/ModalPlayground/ModalPlayground.tsx";
 import {IPlayground} from "../../../api/playground/types.ts";
 import {getAllPlaygrounds} from "../../../api/playground";
 
-const YandexMap = () => {
+const YandexMap = ({defaultActive}:{defaultActive?: number}) => {
     const [filtersIsActive, setFiltersIsActive] = useState<boolean>(false)
     const [meetsIsActive, setMeetsIsActive] = useState<boolean>(false)
-    const [playgroundId, setPlaygroundId] = useState<number | null>(null)
-    const mapCenter = [56.327745, 44.002288];
+    const [playgroundId, setPlaygroundId] = useState<number | undefined>(defaultActive)
+    const mapCenter = [56.338382, 43.943282];
     const [playgrounds, setPlaygrounds] = useState<IPlayground[]>([]);
 
     const handlePlacemarkClick = (id:number) => {
+        setPlaygroundId(undefined)
         setPlaygroundId(id)
     };
 
@@ -23,7 +24,7 @@ const YandexMap = () => {
             try {
                 const temp = await getAllPlaygrounds();
                 console.log(temp)
-                setPlaygrounds(temp.data);
+                setPlaygrounds([...temp.data]);
             } catch (error) {
                 console.error("Error fetching playgrounds:", error);
             }
@@ -90,7 +91,7 @@ const YandexMap = () => {
 
             <ModalMapFilters active={filtersIsActive} onClose={() => setFiltersIsActive(false)}/>
             <ModalMeets active={meetsIsActive} onClose={() => setMeetsIsActive(false)}/>
-            {playgroundId != null && <ModalPlayground id={playgroundId} active={!!playgroundId} onClose={() => setPlaygroundId(null)}/>}
+            {playgroundId != undefined && <ModalPlayground key={playgroundId} id={playgroundId} active={!!playgroundId} onClose={() => setPlaygroundId(undefined)}/>}
         </>
     );
 };

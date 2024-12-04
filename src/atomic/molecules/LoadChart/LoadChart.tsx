@@ -6,6 +6,8 @@ import { IPlaygroundState } from "../../../api/playground/types.ts";
 interface LoadChartProps {
   states: IPlaygroundState[] | undefined;
   setNowPlayers: (value: number) => void;
+  setNowHour:(value: number) => void;
+  setCurMax: (value: number) => void
 }
 
 interface Bar {
@@ -14,7 +16,7 @@ interface Bar {
 }
 
 const LoadChart: React.FC<LoadChartProps> = (props: LoadChartProps) => {
-  const { states, setNowPlayers } = props;
+  const { states, setNowPlayers, setNowHour, setCurMax } = props;
   const maxHeight = 90;
   const maxValue = 15;
   const barWidth = 15;
@@ -40,6 +42,8 @@ const LoadChart: React.FC<LoadChartProps> = (props: LoadChartProps) => {
 
   useEffect(() => {
     setNowPlayers(data[activeIndex]?.now);
+    setNowHour(activeIndex)
+    setCurMax(states?.filter((el) => passedHours(new Date(el.startTime)) == activeIndex)[0]?.maxCount);
   }, [activeIndex, data]);
 
   return (
@@ -47,30 +51,40 @@ const LoadChart: React.FC<LoadChartProps> = (props: LoadChartProps) => {
       {data?.map((el, index) => {
         const left = barWidth * index + "px";
         const height = maxHeight * (el.now / maxValue) + "px";
+        const bottom = 20+height + "px"
         const width = barWidth + "px";
         return (
-          <>
-            <div
-              onClick={() => {
-                setActiveIndex(index);
-              }}
-              style={{ left, height, width, borderWidth }}
-              className={styles.loadchart__bar}
-            ></div>
-            {index % 6 == 0 && (
+            <>
               <div
-                style={{ left, width }}
-                className={styles.loadchart__barText}
-              >
-                {index % 24}
-              </div>
-            )}
-          </>
+                  onClick={() => {
+                    setActiveIndex(index);
+                    setNowHour(index)
+                  }}
+                  style={{left, height, width, borderWidth}}
+                  className={styles.loadchart__bar}
+              ></div>
+              <div
+                  onClick={() => {
+                    setActiveIndex(index);
+                    setNowHour(index)
+                  }}
+                  style={{left, height, width, bottom, borderWidth}}
+                  className={styles.loadchart__bar}
+              ></div>
+              {index % 6 == 0 && (
+                  <div
+                      style={{left, width}}
+                      className={styles.loadchart__barText}
+                  >
+                    {index % 24}
+                  </div>
+              )}
+            </>
         );
       })}
       <div
-        style={{ left: baseNowOffset + barWidth * nowIndex + "px" }}
-        className={styles.loadchart__now}
+          style={{left: baseNowOffset + barWidth * nowIndex + "px"}}
+          className={styles.loadchart__now}
       >
         <div className={styles.loadchart__nowText}>Сейчас</div>
         <div className={styles.loadchart__nowStick}></div>

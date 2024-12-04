@@ -13,6 +13,7 @@ export interface IEventData {
     type: string;
   };
   userCount: 1;
+  userMaxCount: number;
 }
 
 export const getEventData = (): AxiosPromise<IEventData[]> =>

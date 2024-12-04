@@ -3,6 +3,7 @@ import CommandRequestsFilters from "../../molecules/CommandRequestsFilters/Comma
 import CommandRequestCard from "../../molecules/CommandRequestCard/CommandRequestCard.tsx";
 import { useEffect, useState } from "react";
 import { getEventData, IEventData } from "../../../api/events";
+import {Link} from "react-router-dom";
 
 const CommandRequests = () => {
   const [eventsData, setEventsData] = useState<[] | IEventData[]>([]);
@@ -26,7 +27,7 @@ const CommandRequests = () => {
       <CommandRequestsFilters />
       <div className={styles.container}>
         {eventsData.map((request, i) => (
-          <CommandRequestCard data={request} key={i} />
+            <Link to={"/map?id="+request.playgroundEventInfoDto.playgroundId}><CommandRequestCard data={request} key={i} /></Link>
         ))}
       </div>
     </div>

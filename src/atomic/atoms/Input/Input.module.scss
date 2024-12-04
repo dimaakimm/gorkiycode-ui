@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #DDDDDD;
+  border: 1px solid black;
   font-family: 'Gothem', system-ui, sans-serif, system-ui, sans-serif;
   border-radius: 10px;
   width: 100%;
@@ -16,4 +16,8 @@
 
 .input::placeholder{
   color: #DDDDDD
+}
+
+.input:disabled{
+  border: 1px solid #DDDDDD;
 }
